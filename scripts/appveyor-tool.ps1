@@ -189,7 +189,7 @@ Function Bootstrap {
   }
 
   Progress "Downloading and installing travis-tool.sh"
-  Invoke-WebRequest https://raw.githubusercontent.com/krlmlr/r-appveyor/master/r-travis/scripts/travis-tool.sh -OutFile "..\travis-tool.sh"
+  Invoke-WebRequest https://raw.githubusercontent.com/pegeler/r-appveyor/master/r-travis/scripts/travis-tool.sh -OutFile "..\travis-tool.sh"
   echo '@bash.exe ../travis-tool.sh %*' | Out-File -Encoding ASCII .\travis-tool.sh.cmd
   cat .\travis-tool.sh.cmd
   bash -c "( echo; echo '^travis-tool\.sh\.cmd$' ) >> .Rbuildignore"
