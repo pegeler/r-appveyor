@@ -294,14 +294,14 @@ RunTests() {
     if [[ "${KEEP_VIGNETTES}" == "" ]]; then
         if [[ "${OS:0:5}" == "MINGW" || "${OS:0:4}" == "MSYS" ]]; then
             if [[ -d vignettes ]]; then
-                rm -rf vignettes
+                /bin/rm -rf vignettes
                 Rscript -e "d <- read.dcf('DESCRIPTION'); d[, colnames(d) == 'VignetteBuilder'] <- NA; write.dcf(d, 'DESCRIPTION')"
             fi
         fi
     fi
     R CMD build ${R_BUILD_ARGS} .
     # We want to grab the version we just built.
-    FILE=$(ls -1t *.tar.gz | head -n 1)
+    FILE=$(/bin/ls -1t *.tar.gz | /usr/bin/head -n 1)
 
     # Create binary package (currently Windows only)
     if [[ "${OS:0:5}" == "MINGW" || "${OS:0:4}" == "MSYS" ]]; then
