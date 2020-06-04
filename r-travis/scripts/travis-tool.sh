@@ -10,7 +10,7 @@ CRAN=${CRAN:-"https://cloud.r-project.org"}
 BIOC=${BIOC:-"http://bioconductor.org/biocLite.R"}
 PKGTYPE=${PKGTYPE:-"win.binary"}
 BIOC_USE_DEVEL=${BIOC_USE_DEVEL:-"TRUE"}
-OS=$(uname -s)
+OS=$(uname.exe -s)
 DOWNLOAD_FILE_METHOD=${DOWNLOAD_FILE_METHOD:-"auto"}
 
 PANDOC_VERSION='1.13.1'
